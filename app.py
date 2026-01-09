@@ -2,9 +2,16 @@ from flask import Flask, render_template, request
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 import numpy as np
+
+# --- TAMBAHAN WAJIB AGAR TIDAK ERROR DI RENDER ---
+import matplotlib
+matplotlib.use('Agg')  # <--- INI KUNCINYA
 import matplotlib.pyplot as plt
+# -------------------------------------------------
+
 import base64
 from io import BytesIO
+
 
 
 app = Flask(__name__)
@@ -142,4 +149,5 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
